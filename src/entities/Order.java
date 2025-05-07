@@ -1,60 +1,78 @@
 package entities;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Order {
-    private AtomicInteger AutoOId = new AtomicInteger(0);
+    private static final AtomicInteger AutoOId = new AtomicInteger(0);
     private String OId;
-    private String OName;
-    private String Date;
-    private String TotalPriceOrder;
+    private LocalDate Date;
+    private Customer OCustomer;
+    private List<OrderItem> OProducts = new ArrayList<>();
+    private double OTotalPrice;
 
     // Constructor
-    public Order(String oName, String date, String totalPriceOrder) {
-        this.OId = String.format("OId%d", AutoOId.incrementAndGet());
-        this.OName = oName;
+
+    public Order(String OId, LocalDate date, Customer OCustomer, List<OrderItem> OProducts) {
+        this.OId = String.format("Order%d", AutoOId.getAndIncrement());
         this.Date = date;
-        this.TotalPriceOrder = totalPriceOrder;
+        this.OCustomer = OCustomer;
+        this.OProducts = OProducts;
     }
+
+    public Order(String OId, LocalDate date, Customer oCustomer, OrderItem product, double OTotalPrice) {
+        this.OId = String.format("Order%d", AutoOId.getAndIncrement());
+        this.Date = LocalDate.parse(date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        this.OCustomer = oCustomer;
+        this.OProducts.add(product);
+        this.OTotalPrice = OTotalPrice;
+    }
+
     // Getters
 
     public String getOId() {
         return OId;
     }
 
-    public String getOName() {
-        return OName;
-    }
-
-    public void setOName(String OName) {
-        this.OName = OName;
-    }
-
     public String getDate() {
-        return Date;
-    }
-    // Setters
-
-    public void setDate(String date) {
-        Date = date;
+        return Date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
-    public String getTotalPriceOrder() {
-        return TotalPriceOrder;
+    public int getMonthValue() {
+        return Integer.parseInt(Date.format(DateTimeFormatter.ofPattern("MM")));
     }
 
-    public void setTotalPriceOrder(String totalPriceOrder) {
-        TotalPriceOrder = totalPriceOrder;
+    public int getYearValue() {
+        return Integer.parseInt(Date.format(DateTimeFormatter.ofPattern("yyyy")));
     }
+
+    public Optional<Customer> getOCustomer() {
+        return Optional.ofNullable(OCustomer);
+    }
+
+    public List<OrderItem> getOProducts() {
+        return OProducts;
+    }
+
+public double getOTotalPrice() {
+    return OProducts.stream().mapToDouble(OrderItem::getPrice).sum();
+}
+
     // toString
 
     @Override
     public String toString() {
         return "Order{" +
                 "OId='" + OId + '\'' +
-                ", OName='" + OName + '\'' +
                 ", Date='" + Date + '\'' +
-                ", TotalPriceOrder='" + TotalPriceOrder + '\'' +
+                ", OCustomer=" + getOCustomer().map(Customer::toString).orElse("N/A") +
+                ", OProducts=" + OProducts +
                 '}';
     }
+
+    //
 }
