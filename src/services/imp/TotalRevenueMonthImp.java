@@ -6,23 +6,23 @@ import entities.Order;
 import services.ITotalRevenueMonth;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class TotalRevenueMonthImp implements ITotalRevenueMonth {
-    public static void main(String[] args) {
-        ITotalRevenueMonth totalRevenueMonth = new TotalRevenueMonthImp();
-        double total = totalRevenueMonth.calculateTotalRevenue("01", "2020");
-        System.out.println("Total Revenue: " + total);
+    public void calculateTotalRevenue(String month, String year) {
+        List<Order> orders = AllData.getOrders(AllData.getProducts(), AllData.getCustomers());
+        Consumer<List<Order>> calculateAndPrintTotal = orderList -> {
+            double totalPrice = orderList.stream()
+                    .filter(order -> order.getMonthValue() == Integer.parseInt(month) && order.getYearValue() == Integer.parseInt(year))
+                    .mapToDouble(Order::getOTotalPrice)
+                    .sum();
+            System.out.println("Total Price: " + totalPrice);
+        };
+        calculateAndPrintTotal.accept(orders);
     }
 
-    // Functional
-    @Override
-    public double calculateTotalRevenue(String month, String year) {
-        List<Order> orders = AllData.getOrders(AllData.getProducts(), AllData.getCustomers());
-        double totalRevenue = orders.stream()
-                .filter(order -> order.getMonthValue() == Integer.parseInt(month) && order.getYearValue() == Integer.parseInt(year))
-                .mapToDouble(Order::getOTotalPrice)
-                .sum();
-
-        return totalRevenue;
+    public static void main(String[] args) {
+        TotalRevenueMonthImp totalRevenueMonth = new TotalRevenueMonthImp();
+        totalRevenueMonth.calculateTotalRevenue("02", "2020");
     }
 }

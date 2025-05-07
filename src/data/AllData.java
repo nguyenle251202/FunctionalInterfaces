@@ -46,29 +46,50 @@ public class AllData {
         for (Product product : products) {
             productMap.put(product.getPdName(), product);
         }
-        Orders.add(new Order("null", LocalDate.parse("01/01/2020", formatter), customers.get(0), List.of(new OrderItem(productMap.get("Product0"), 2), new OrderItem(productMap.get("Product1"), 3))));
-        Orders.add(new Order("null", LocalDate.parse("03/01/2020", formatter), customers.get(1), List.of(new OrderItem(productMap.get("Product7"), 2), new OrderItem(productMap.get("Product2"), 4))));
-        Orders.add(new Order("null", LocalDate.parse("05/01/2020", formatter), customers.get(3), List.of(new OrderItem(productMap.get("Product6"), 6), new OrderItem(productMap.get("Product3"), 1))));
-        Orders.add(new Order("null", LocalDate.parse("06/01/2020", formatter), customers.get(1), List.of(new OrderItem(productMap.get("Product2"), 3))));
-        Orders.add(new Order("null", LocalDate.parse("07/01/2020", formatter), customers.get(0), List.of(new OrderItem(productMap.get("Product1"), 3), new OrderItem(productMap.get("Product8"), 2), new OrderItem(productMap.get("Product9"), 1))));
-        Orders.add(new Order("null", LocalDate.parse("08/01/2020", formatter), customers.get(2), List.of(new OrderItem(productMap.get("Product0"), 4), new OrderItem(productMap.get("Product1"), 2))));
-        Orders.add(new Order("null", LocalDate.parse("09/01/2020", formatter), customers.get(3), List.of(new OrderItem(productMap.get("Product8"), 2), new OrderItem(productMap.get("Product6"), 1))));
-        Orders.add(new Order("null", LocalDate.parse("01/02/2020", formatter), customers.get(2), List.of(new OrderItem(productMap.get("Product1"), 2), new OrderItem(productMap.get("Product7"), 3))));
-        Orders.add(new Order("null", LocalDate.parse("02/02/2020", formatter), customers.get(4), List.of(new OrderItem(productMap.get("Product6"), 5), new OrderItem(productMap.get("Product2"), 2))));
-        Orders.add(new Order("null", LocalDate.parse("03/02/2020", formatter), customers.get(5), List.of(new OrderItem(productMap.get("Product0"), 3))));
-        Orders.add(new Order("null", LocalDate.parse("04/02/2020", formatter), customers.get(1), List.of(new OrderItem(productMap.get("Product8"), 4), new OrderItem(productMap.get("Product3"), 2))));
-        Orders.add(new Order("null", LocalDate.parse("05/02/2020", formatter), customers.get(0), List.of(new OrderItem(productMap.get("Product9"), 2))));
-        Orders.add(new Order("null", LocalDate.parse("06/02/2020", formatter), customers.get(2), List.of(new OrderItem(productMap.get("Product1"), 6), new OrderItem(productMap.get("Product6"), 1))));
-        Orders.add(new Order("null", LocalDate.parse("07/02/2020", formatter), customers.get(3), List.of(new OrderItem(productMap.get("Product5"), 3))));
-        Orders.add(new Order("null", LocalDate.parse("01/03/2020", formatter), customers.get(4), List.of(new OrderItem(productMap.get("Product3"), 1), new OrderItem(productMap.get("Product10"), 2))));
-        Orders.add(new Order("null", LocalDate.parse("02/03/2020", formatter), customers.get(5), List.of(new OrderItem(productMap.get("Product4"), 5), new OrderItem(productMap.get("Product7"), 2))));
-        Orders.add(new Order("null", LocalDate.parse("03/03/2020", formatter), customers.get(0), List.of(new OrderItem(productMap.get("Product5"), 7))));
-        Orders.add(new Order("null", LocalDate.parse("04/03/2020", formatter), customers.get(4), List.of(new OrderItem(productMap.get("Product3"), 6), new OrderItem(productMap.get("Product10"), 3))));
-        Orders.add(new Order("null", LocalDate.parse("05/03/2020", formatter), customers.get(5), List.of(new OrderItem(productMap.get("Product0"), 5))));
-        Orders.add(new Order("null", LocalDate.parse("06/03/2020", formatter), customers.get(2), List.of(new OrderItem(productMap.get("Product4"), 4))));
-        Orders.add(new Order("null", LocalDate.parse("07/03/2020", formatter), customers.get(1), List.of(new OrderItem(productMap.get("Product6"), 2))));
-        Orders.add(new Order("null", LocalDate.parse("07/03/2020", formatter), customers.get(1), List.of(new OrderItem(productMap.get("Product6"), 2))));
-
+        Orders.add(new Order("null", LocalDate.parse("01/01/2020", formatter), customers.get(0),
+                List.of(new OrderItem(productMap.get("Product0"), 2), new OrderItem(productMap.get("Product1"), 3))));
+        Orders.add(new Order("null", LocalDate.parse("03/01/2020", formatter), customers.get(1),
+                List.of(new OrderItem(productMap.get("Product7"), 2), new OrderItem(productMap.get("Product2"), 4))));
+        Orders.add(new Order("null", LocalDate.parse("05/01/2020", formatter), customers.get(3),
+                List.of(new OrderItem(productMap.get("Product6"), 6), new OrderItem(productMap.get("Product3"), 1))));
+        Orders.add(new Order("null", LocalDate.parse("06/01/2020", formatter), customers.get(1),
+                List.of(new OrderItem(productMap.get("Product2"), 3))));
+        Orders.add(new Order("null", LocalDate.parse("07/01/2020", formatter), customers.get(0),
+                List.of(new OrderItem(productMap.get("Product1"), 3), new OrderItem(productMap.get("Product8"), 2), new OrderItem(productMap.get("Product9"), 1))));
+        Orders.add(new Order("null", LocalDate.parse("08/01/2020", formatter), customers.get(2),
+                List.of(new OrderItem(productMap.get("Product0"), 4), new OrderItem(productMap.get("Product1"), 2))));
+        Orders.add(new Order("null", LocalDate.parse("09/01/2020", formatter), customers.get(3),
+                List.of(new OrderItem(productMap.get("Product8"), 2), new OrderItem(productMap.get("Product6"), 1))));
+        Orders.add(new Order("null", LocalDate.parse("01/02/2020", formatter), customers.get(2),
+                List.of(new OrderItem(productMap.get("Product1"), 2), new OrderItem(productMap.get("Product7"), 3))));
+        Orders.add(new Order("null", LocalDate.parse("02/02/2020", formatter), customers.get(4),
+                List.of(new OrderItem(productMap.get("Product6"), 5), new OrderItem(productMap.get("Product2"), 2))));
+        Orders.add(new Order("null", LocalDate.parse("03/02/2020", formatter), customers.get(5),
+                List.of(new OrderItem(productMap.get("Product0"), 3))));
+        Orders.add(new Order("null", LocalDate.parse("04/02/2020", formatter), customers.get(1),
+                List.of(new OrderItem(productMap.get("Product8"), 4), new OrderItem(productMap.get("Product3"), 2))));
+        Orders.add(new Order("null", LocalDate.parse("05/02/2020", formatter), customers.get(0),
+                List.of(new OrderItem(productMap.get("Product9"), 2))));
+        Orders.add(new Order("null", LocalDate.parse("06/02/2020", formatter), customers.get(2),
+                List.of(new OrderItem(productMap.get("Product1"), 6), new OrderItem(productMap.get("Product6"), 1))));
+        Orders.add(new Order("null", LocalDate.parse("07/02/2020", formatter), customers.get(3),
+                List.of(new OrderItem(productMap.get("Product5"), 3))));
+        Orders.add(new Order("null", LocalDate.parse("01/03/2020", formatter), customers.get(4),
+                List.of(new OrderItem(productMap.get("Product3"), 1), new OrderItem(productMap.get("Product10"), 2))));
+        Orders.add(new Order("null", LocalDate.parse("02/03/2020", formatter), customers.get(5),
+                List.of(new OrderItem(productMap.get("Product4"), 5), new OrderItem(productMap.get("Product7"), 2))));
+        Orders.add(new Order("null", LocalDate.parse("03/03/2020", formatter), customers.get(0),
+                List.of(new OrderItem(productMap.get("Product5"), 7))));
+        Orders.add(new Order("null", LocalDate.parse("04/03/2020", formatter), customers.get(4),
+                List.of(new OrderItem(productMap.get("Product3"), 6), new OrderItem(productMap.get("Product10"), 3))));
+        Orders.add(new Order("null", LocalDate.parse("05/03/2020", formatter), customers.get(5),
+                List.of(new OrderItem(productMap.get("Product0"), 5))));
+        Orders.add(new Order("null", LocalDate.parse("06/03/2020", formatter), customers.get(2),
+                List.of(new OrderItem(productMap.get("Product4"), 4))));
+        Orders.add(new Order("null", LocalDate.parse("07/03/2020", formatter), customers.get(1),
+                List.of(new OrderItem(productMap.get("Product6"), 2))));
+        Orders.add(new Order("null", LocalDate.parse("07/03/2020", formatter), customers.get(1),
+                List.of(new OrderItem(productMap.get("Product6"), 2))));
         return Orders;
     }
 

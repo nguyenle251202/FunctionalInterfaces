@@ -7,7 +7,16 @@ public class Product {
     private String PdId;
     private String PdName;
     private double PdPrice;
+    // thêm:
+    private double totalRevenue;
 
+    public double getTotalRevenue() {
+        return this.totalRevenue;
+    }
+
+    public void setTotalRevenue(double totalRevenue) {
+        this.totalRevenue = totalRevenue;
+    }
     // Constructor
     public Product(String pdName, double pdprice) {
         this.PdId = String.format("Pd%d", AutoPdId.getAndIncrement());
@@ -24,9 +33,10 @@ public class Product {
         return PdName;
     }
 
-    public double getPrice() {
+    public double getPdPrice() {
         return PdPrice;
     }
+    // Setters
 
     // toString
 

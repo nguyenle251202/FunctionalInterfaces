@@ -3,5 +3,5 @@ package services;
 
 @FunctionalInterface
 public interface ITotalRevenueMonth {
-    double calculateTotalRevenue(String month, String year);
+    void calculateTotalRevenue(String month, String year);
 }

@@ -9,7 +9,7 @@ public class OrderItem {
     public OrderItem(Product product, double quantity) {
         this.product = product;
         this.quantity = quantity;
-        this.price = product.getPrice() * quantity;
+        this.price = product.getPdPrice() * quantity;
     }
     public double getPrice() {
         return price;
@@ -18,17 +18,10 @@ public class OrderItem {
         return product;
     }
     public double getPdPrice() {
-        return product.getPrice();
+        return product.getPdPrice();
     }
     public double getQuantity() {
         return quantity;
-    }
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
     }
 
     @Override
