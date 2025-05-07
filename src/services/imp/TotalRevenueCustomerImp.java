@@ -9,21 +9,20 @@ import java.util.List;
 
 public class TotalRevenueCustomerImp {
     public static double TotalRevenueCustomer() {
-        List<Customer> customers = AllData.getCustomers();
         List<Order> orders = AllData.getOrders(AllData.getProducts(), AllData.getCustomers());
-        double totalRevenue = 0;
-        for (int i=0; i< customers.size(); i++) {
-            System.out.print(customers.get(i).getUsername());
-
-//            totalRevenue = orders.stream()
-//                    .filter(orders.get())
-//            System.out.print(" - Total Revenue: " + totalRevenue +"\n");
+        for (Customer customer : AllData.getCustomers()) {
+            double revenue = orders.stream()
+                    .filter(order -> order.getOCustomer().isPresent()
+                            && order.getOCustomer().get().equals(customer))
+                    .mapToDouble(Order::getOTotalPrice)
+                    .sum();
+            System.out.println("Username: " + customer.getUsername() + " => Revenue: " + revenue);
         }
-        return totalRevenue;
+        return 0;
     }
     public static void main(String[] args) {
         TotalRevenueCustomerImp totalRevenueCustomer = new TotalRevenueCustomerImp();
-        TotalRevenueCustomer();
+        totalRevenueCustomer.TotalRevenueCustomer();
     }
 }
 
