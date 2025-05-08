@@ -25,7 +25,7 @@ public class TotalRevenueCustomerImp implements ITotalRevenueCustomer {
         calculatePriceCustomer.accept(orders);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         TotalRevenueCustomerImp totalRevenueCustomer = new TotalRevenueCustomerImp();
         totalRevenueCustomer.TotalRevenueCustomer();
     }

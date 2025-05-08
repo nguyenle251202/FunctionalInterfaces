@@ -1,6 +1,7 @@
 package UI;
 
 import enums.Option;
+import services.imp.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -9,13 +10,13 @@ public class DisplayMenu {
     public static void displayMenu() {
         System.out.println("");
         System.out.println("----- Main Menu -----");
-        System.out.println("[1]. Highest Revenue Product");
-        System.out.println("[2]. Total Revenue Customer");
-        System.out.println("[3]. Segment Order");
-        System.out.println("[4]. Top Spender");
-        System.out.println("[5]. Total Revenue Customer");
-        System.out.println("[6]. Total Revenue Month");
-        System.out.println("0. Exit");
+        System.out.println("[1]. Find the 3 highest revenue products");
+        System.out.println("[2]. Calculate total revenue by customer");
+        System.out.println("[3]. Find the highest value order of each customer");
+        System.out.println("[4]. Categorize orders by month");
+        System.out.println("[5]. Calculate total revenue each month");
+        System.out.println("[6]. Find the customer who spent the most in a period of time");
+        System.out.println("[0]. Exit");
         System.out.print("Please select an option: ");
     }
     public static Option OptionMenu(int numberOption) {
@@ -28,31 +29,31 @@ public class DisplayMenu {
 
         switch (option) {
             case HIGHESTGROSSING: //1
-                System.out.println("Highest Revenue Product");
-                //
+//                System.out.println("Highest Revenue Product");
+                HighestRevenueImp.main();
                 break;
             case HIGHESTVALUE: //2
-                System.out.println("Total Revenue Customer");
-                //
+//                System.out.println("Total Revenue Customer");
+                TotalRevenueCustomerImp.main();
                 break;
             case SEGMENTORDER: //3
-                System.out.println("Segment Order");
-                //
+//                System.out.println("Segment Order");
+                HighestOrderCustomerImp.main();
                 break;
             case TOPSPENDER: //4
-                System.out.println("Top Spender");
-                //
+//                System.out.println("Top Spender");
+                CategorizeOrdersMonthImp.main();
                 break;
             case TOTALREVENUECUSTOMER: //5
-                System.out.println("Total Revenue Customer");
-                //
+//                System.out.println("Total Revenue Customer");
+                TotalRevenueMonthImp.main();
                 break;
             case TOTALREVENUEMONTH: //6
-                System.out.println("Total Revenue Month");
-                //
+//                System.out.println("Total Revenue Month");
+                BestCustomerOfTimeImp.main();
                 break;
             case EXIT: //0
-                System.out.println("Exit");
+//                System.out.println("Exit");
                 break;
             default:
                 System.out.println("Invalid option");

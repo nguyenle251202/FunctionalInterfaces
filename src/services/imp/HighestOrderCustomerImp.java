@@ -31,7 +31,7 @@ public class HighestOrderCustomerImp implements IHighestOrderCustomer {
         calculatePriceCustomer.accept(orders);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         HighestOrderCustomerImp highestOrderCustomer = new HighestOrderCustomerImp();
         highestOrderCustomer.HighestRevenue();
     }

@@ -21,7 +21,7 @@ public class TotalRevenueMonthImp implements ITotalRevenueMonth {
         calculateAndPrintTotal.accept(orders);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         TotalRevenueMonthImp totalRevenueMonth = new TotalRevenueMonthImp();
         totalRevenueMonth.calculateTotalRevenue("02", "2020");
     }

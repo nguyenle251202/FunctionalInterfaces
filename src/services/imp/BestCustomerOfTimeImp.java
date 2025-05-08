@@ -48,7 +48,7 @@ public class BestCustomerOfTimeImp {
         calculateAndPrintTotal.accept(orders);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         BestCustomerOfTimeImp bestCustomerOfTime = new BestCustomerOfTimeImp();
         bestCustomerOfTime.PeriodTime(
                 LocalDate.parse("06/01/2020", DateTimeFormatter.ofPattern("dd/MM/yyyy")),

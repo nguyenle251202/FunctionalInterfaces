@@ -22,7 +22,7 @@ public class CategorizeOrdersMonthImp {
         };
         calculateAndPrintTotal.accept(orders);
     }
-    public static void main(String[] args) {
+    public static void main() {
         CategorizeOrdersMonthImp categorizeOrdersMonth = new CategorizeOrdersMonthImp();
         categorizeOrdersMonth.Categorize("02", "2020");
     }

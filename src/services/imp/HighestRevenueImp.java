@@ -33,7 +33,7 @@ public class HighestRevenueImp implements IHighestRevenue {
         ThreeProduct.accept(orders);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         HighestRevenueImp hr = new HighestRevenueImp();
         hr.TopThree();
     }
