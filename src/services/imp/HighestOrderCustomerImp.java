@@ -17,7 +17,8 @@ public class HighestOrderCustomerImp implements IHighestOrderCustomer {
         Consumer<List<Order>> calculatePriceCustomer = orderList -> {
             for (Customer customer : AllData.getCustomers()) {
                 Order maxOrder = orderList.stream()
-                        .filter(order -> order.getOCustomer().isPresent() && order.getOCustomer().get().getCtId().equals(customer.getCtId()))
+                        .filter(order -> order.getOCustomer().isPresent()
+                                && order.getOCustomer().get().getCtId().equals(customer.getCtId()))
                         .max((o1, o2) -> Double.compare(o1.getOTotalPrice(), o2.getOTotalPrice()))
                         .orElse(null);
                 if (maxOrder != null) {

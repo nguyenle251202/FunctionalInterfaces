@@ -55,7 +55,8 @@ public class AllData {
         Orders.add(new Order("null", LocalDate.parse("06/01/2020", formatter), customers.get(1),
                 List.of(new OrderItem(productMap.get("Product2"), 3))));
         Orders.add(new Order("null", LocalDate.parse("07/01/2020", formatter), customers.get(0),
-                List.of(new OrderItem(productMap.get("Product1"), 3), new OrderItem(productMap.get("Product8"), 2), new OrderItem(productMap.get("Product9"), 1))));
+                List.of(new OrderItem(productMap.get("Product1"), 3), new OrderItem(productMap.get("Product8"), 2),
+                        new OrderItem(productMap.get("Product9"), 1))));
         Orders.add(new Order("null", LocalDate.parse("08/01/2020", formatter), customers.get(2),
                 List.of(new OrderItem(productMap.get("Product0"), 4), new OrderItem(productMap.get("Product1"), 2))));
         Orders.add(new Order("null", LocalDate.parse("09/01/2020", formatter), customers.get(3),
